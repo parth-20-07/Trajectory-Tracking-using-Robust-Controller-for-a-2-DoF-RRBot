@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2023a"><title>Untitled</title><style type="text/css">.rtcContent { padding: 30px; } .CodeBlock { background-color: #F5F5F5; margin: 10px 0 10px 0; }
+.S0 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 1px solid rgb(217, 217, 217); border-bottom: 0px none rgb(33, 33, 33); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S1 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 1px solid rgb(217, 217, 217); border-radius: 0px; padding: 0px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S2 { color: rgb(33, 33, 33); padding: 10px 0px 6px 17px; background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px; overflow-x: hidden; line-height: 17.234px;  }
+/* Styling that is common to warnings and errors is in diagnosticOutput.css */.embeddedOutputsErrorElement {    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsErrorElement .diagnosticMessage-errorType {    overflow: auto;}
+.embeddedOutputsErrorElement.inlineElement {}
+.embeddedOutputsErrorElement.rightPaneElement {}
+/* Styling that is common to warnings and errors is in diagnosticOutput.css */.embeddedOutputsWarningElement {    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsWarningElement .diagnosticMessage-warningType {    overflow: auto;}
+.embeddedOutputsWarningElement.inlineElement {}
+.embeddedOutputsWarningElement.rightPaneElement {}
+/* Copyright 2015-2022 The MathWorks, Inc. *//* In this file, styles are not scoped to rtcContainer since they could be in the Dojo Tooltip */.diagnosticMessage-wrapper {    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;    font-size: 12px;}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType {    color: var(--mw-color-matlabWarning);}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType a {    color: var(--mw-color-matlabWarning);    text-decoration: underline;}
+.rtcThemeDefaultOverride .diagnosticMessage-wrapper.diagnosticMessage-warningType,.rtcThemeDefaultOverride .diagnosticMessage-wrapper.diagnosticMessage-warningType a {    color: var(--mw-color-matlabWarning) !important;}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType {    color: var(--mw-color-matlabErrors);}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType a {    color: var(--mw-color-matlabErrors);    text-decoration: underline;}
+.rtcThemeDefaultOverride .diagnosticMessage-wrapper.diagnosticMessage-errorType,.rtcThemeDefaultOverride .diagnosticMessage-wrapper.diagnosticMessage-errorType a {    color: var(--mw-color-matlabErrors) !important;}
+.diagnosticMessage-wrapper .diagnosticMessage-messagePart,.diagnosticMessage-wrapper .diagnosticMessage-causePart {    white-space: pre-wrap;}
+.diagnosticMessage-wrapper .diagnosticMessage-stackPart {    white-space: pre;}
+.embeddedOutputsTextElement,.embeddedOutputsVariableStringElement {    white-space: pre;    word-wrap:  initial;    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsTextElement .textElement,.embeddedOutputsVariableStringElement .textElement {    overflow: auto;}
+.textElement,.rtcDataTipElement .textElement {    padding-top: 2px;}
+.embeddedOutputsTextElement.inlineElement,.embeddedOutputsVariableStringElement.inlineElement {}
+.inlineElement .textElement {}
+.embeddedOutputsTextElement.rightPaneElement,.embeddedOutputsVariableStringElement.rightPaneElement {    min-height: 16px;}
+.rightPaneElement .textElement {    padding-top: 2px;    padding-left: 9px;}
+.S3 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 1px solid rgb(217, 217, 217); border-bottom: 0px none rgb(33, 33, 33); border-radius: 0px; padding: 6px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S4 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 0px none rgb(33, 33, 33); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S5 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 1px solid rgb(217, 217, 217); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }</style></head><body><div class = rtcContent><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S0'><span style="white-space: pre"><span style="color: rgb(0, 128, 19);">% ROS Setup</span></span></div></div><div class="inlineWrapper outputs"><div  class = 'S1'><span style="white-space: pre"><span style="color: rgb(0, 128, 19);">%system("roslaunch rrbot_gazebo rrbot_world.launch");</span></span></div><div  class = 'S2'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement scrollableOutput" uid="27005BA9" prevent-scroll="true" data-testid="output_0" style="width: 1039px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent scrollArea" data-previous-available-width="1009" data-previous-scroll-height="6853" data-hashorizontaloverflow="true" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">... logging to /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/roslaunch-Ubuntu-20-79346.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is &lt;1GB.
+]2;/home/parth/rbe502_ros/src/gazebo_ros_demos/rrbot_gazebo/launch/rrbot_world.launch
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+[1mstarted roslaunch server http://Ubuntu-20:38385/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /gazebo/enable_ros_network: True
+ * /robot_description: &lt;?xml version="1....
+ * /rosdistro: noetic
+ * /rosversion: 1.15.15
+ * /use_sim_time: True
+
+NODES
+  /
+    gazebo (gazebo_ros/gzserver)
+    gazebo_gui (gazebo_ros/gzclient)
+    urdf_spawner (gazebo_ros/spawn_model)
+
+auto-starting new master
+[1mprocess[master]: started with pid [79357][0m
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/parth/rbe502_ros/src/gazebo_ros_demos/rrbot_gazebo/launch/rrbot_world.launch http://localhost:11311
+[1msetting /run_id to df5992bc-7144-11ed-910a-2b266987ee8d[0m
+[1mprocess[rosout-1]: started with pid [79367][0m
+started core service [/rosout]
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[1mprocess[gazebo-2]: started with pid [79370][0m
+[1mprocess[gazebo_gui-3]: started with pid [79373][0m
+[1mprocess[urdf_spawner-4]: started with pid [79378][0m
+[31m[rosout-1] process has died [pid 79367, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79381][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79381, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79391][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Core.so.5: no version information available (required by gzclient)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Core.so.5: no version information available (required by gzclient)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Gui.so.5: no version information available (required by /lib/x86_64-linux-gnu/libgazebo_gui.so.11)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Core.so.5: no version information available (required by /lib/x86_64-linux-gnu/libgazebo_gui.so.11)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Core.so.5: no version information available (required by /lib/x86_64-linux-gnu/libgazebo_gui.so.11)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_gui.so.11)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Widgets.so.5: no version information available (required by /lib/x86_64-linux-gnu/libgazebo_gui.so.11)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libcurl.so.4: no version information available (required by /lib/x86_64-linux-gnu/libgazebo_common.so.11)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_common.so.11)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libOgreMain.so.1.9.0)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_rendering.so.11)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Svg.so.5: no version information available (required by /lib/libqwt-qt5.so.6)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5OpenGL.so.5: no version information available (required by /lib/libqwt-qt5.so.6)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Core.so.5: no version information available (required by /lib/libqwt-qt5.so.6)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Core.so.5: no version information available (required by /lib/libqwt-qt5.so.6)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Widgets.so.5: no version information available (required by /lib/libqwt-qt5.so.6)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libQt5Gui.so.5: no version information available (required by /lib/libqwt-qt5.so.6)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_util.so.11)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_transport.so.11)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_msgs.so.11)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libcurl.so.4: no version information available (required by /lib/x86_64-linux-gnu/libignition-fuel_tools4.so.4)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libsdformat9.so.9)
+gzclient: /usr/local/MATLAB/R2020b/bin/glnxa64/libtiff.so.5: no version information available (required by /lib/x86_64-linux-gnu/libfreeimage.so.3)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libfreeimage.so.3)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libOgreTerrain.so.1.9.0)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libjsoncpp.so.1)
+gzclient: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libIlmImf-2_3.so.24)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo.so.11)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libOgreMain.so.1.9.0)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_util.so.11)
+gzserver: /usr/local/MATLAB/R2020b/bin/glnxa64/libcurl.so.4: no version information available (required by /lib/x86_64-linux-gnu/libgazebo_common.so.11)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_common.so.11)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_sensors.so.11)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_rendering.so.11)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_physics.so.11)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_transport.so.11)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libgazebo_msgs.so.11)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libsdformat9.so.9)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+gzserver: /usr/local/MATLAB/R2020b/bin/glnxa64/libtiff.so.5: no version information available (required by /lib/x86_64-linux-gnu/libfreeimage.so.3)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libfreeimage.so.3)
+gzserver: /usr/local/MATLAB/R2020b/bin/glnxa64/libcurl.so.4: no version information available (required by /lib/x86_64-linux-gnu/libignition-fuel_tools4.so.4)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libOgreTerrain.so.1.9.0)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libdart.so.6)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libassimp.so.5)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libSimTKcommon.so.3.6)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libIlmImf-2_3.so.24)
+gzserver: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libjsoncpp.so.1)
+Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/gazebo_ros/spawn_model", line 34, in &lt;module&gt;
+    from tf.transformations import quaternion_from_euler
+  File "/opt/ros/noetic/lib/python3/dist-packages/tf/__init__.py", line 30, in &lt;module&gt;
+    from tf2_ros import TransformException as Exception, ConnectivityException, LookupException, ExtrapolationException
+  File "/opt/ros/noetic/lib/python3/dist-packages/tf2_ros/__init__.py", line 38, in &lt;module&gt;
+    from tf2_py import *
+  File "/opt/ros/noetic/lib/python3/dist-packages/tf2_py/__init__.py", line 38, in &lt;module&gt;
+    from ._tf2 import *
+ImportError: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libtf2.so)
+[31m[rosout-1] process has died [pid 79391, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[31m[gazebo-2] process has died [pid 79370, exit code 1, cmd /opt/ros/noetic/lib/gazebo_ros/gzserver -e ode /home/parth/rbe502_ros/src/gazebo_ros_demos/rrbot_gazebo/worlds/rrbot.world __name:=gazebo __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/gazebo-2.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/gazebo-2*.log[0m
+[31m[gazebo_gui-3] process has died [pid 79373, exit code 1, cmd /opt/ros/noetic/lib/gazebo_ros/gzclient __name:=gazebo_gui __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/gazebo_gui-3.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/gazebo_gui-3*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79443][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79443, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[31m[urdf_spawner-4] process has died [pid 79378, exit code 1, cmd /opt/ros/noetic/lib/gazebo_ros/spawn_model -urdf -model rrbot -param robot_description __name:=urdf_spawner __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/urdf_spawner-4.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/urdf_spawner-4*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79444][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79444, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79445][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79445, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79447][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79447, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79448][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79448, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79449][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79449, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79450][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79450, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79453][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79453, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79454][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79454, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79455][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79455, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79456][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79456, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79457][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79457, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79458][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79458, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79459][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79459, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79460][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79460, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79461][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79461, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79462][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79462, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79463][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79463, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79464][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79464, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79465][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79465, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79466][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79466, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79467][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79467, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79468][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79468, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79469][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79469, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79470][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79470, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79473][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79473, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79476][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79476, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79477][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79477, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79478][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79478, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79479][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79479, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79480][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79480, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79481][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79481, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79482][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79482, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79483][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79483, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79484][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79484, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79485][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79485, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79486][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79486, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79487][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79487, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79488][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79488, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79492][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79492, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79493][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79493, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79494][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_regex.so.1.71.0)
+[31m[rosout-1] process has died [pid 79494, exit code 1, cmd /opt/ros/noetic/lib/rosout/rosout __name:=rosout __log:=/home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1.log].
+log file: /home/parth/.ros/log/df5992bc-7144-11ed-910a-2b266987ee8d/rosout-1*.log[0m
+[rosout-1] restarting process
+[1mprocess[rosout-1]: started with pid [79495][0m
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/libroscpp.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /opt/ros/noetic/lib/librosconsole.so)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/libboost_thread.so.1.71.0)
+/opt/ros/noetic/lib/rosout/rosout: /usr/local/MATLAB/R2020b/sys/os/glnxa64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /lib/x86_64-linux-gnu/lib...</div></div></div></div><div class="inlineWrapper"><div  class = 'S3'><span style="white-space: pre"><span style="color: rgb(0, 128, 19);">%pause(20);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span style="color: rgb(0, 128, 19);">%system("roslaunch rrbot_control rrbot_effort_control.launch")</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span style="color: rgb(0, 128, 19);">%pause(20);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >rosshutdown;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >pause(5);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >rosinit;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">t0 t1 </span><span style="color: rgb(167, 9, 245);">t</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">theta1 theta1_dot1 theta1_dot2 </span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">theta2 theta2_dot1 theta2_dot2 </span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >m1 = 1;m2=1;l1=1;l2=1;r1=0.45;r2=0.45;I1=0.084;I2=0.084;g=9.81;i1 = 0.063 ; i2 = 0.063 ; m1_new=0.75 ; m2_new = 0.75 ;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >K = [12 0 7 0;0 12 0 7];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >A =[ 0     0     1     0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >     0     0     0     1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >   -12     0    -7     0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >     0   -12     0    -7]</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >B = [0 0;0 0;1 0;0 1];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >rho = 4;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >phi = 0.08;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >Q = eye(4)*10;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >P = lyap(A',Q);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >j1_effort = rospublisher(</span><span style="color: rgb(167, 9, 245);">"/rrbot/joint1_effort_controller/command"</span><span >);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >j2_effort = rospublisher(</span><span style="color: rgb(167, 9, 245);">"/rrbot/joint2_effort_controller/command"</span><span >);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >JointStates = rossubscriber(</span><span style="color: rgb(167, 9, 245);">"/rrbot/joint_states"</span><span >);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >tau1 = rosmessage(j1_effort);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >tau2 = rosmessage(j2_effort);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >tau1.Data = 0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >tau2.Data = 0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >send(j1_effort, tau1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >send(j2_effort, tau2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >client = rossvcclient(</span><span style="color: rgb(167, 9, 245);">"/gazebo/set_model_configuration"</span><span >);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >req = rosmessage(client);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >req.ModelName = </span><span style="color: rgb(167, 9, 245);">'rrbot'</span><span >;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >req.UrdfParamName = </span><span style="color: rgb(167, 9, 245);">'robot_description'</span><span >;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >req.JointNames = {</span><span style="color: rgb(167, 9, 245);">'joint1'</span><span >, </span><span style="color: rgb(167, 9, 245);">'joint2'</span><span >};</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >req.JointPositions = [deg2rad(200), deg2rad(125)];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >resp = call(client, req, </span><span style="color: rgb(167, 9, 245);">'Timeout'</span><span >, 3);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >tic;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >t = 0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >i = 1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">while </span><span >(t &lt; 10)</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    t = toc;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    x1d = (pi * t^3) / 500 - (3 * pi * t^2) / 100 + pi;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    dx1d = (3 * pi * t^2) / 500 - (3 * pi * t) / 50;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    v1d = (3 * pi * t) / 250 - (3 * pi) / 50;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    x2d = (pi * t^3) / 1000 - (3 * pi * t^2) / 200 + pi / 2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    dx2d = (3 * pi * t^2) / 1000 - (3 * pi * t) / 100;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    v2d = (3 * pi * t) / 500 - (3 * pi) / 100;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    </span><span style="color: rgb(0, 128, 19);">% read the joint states</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    jointData = receive(JointStates);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    q1 = jointData.Position(1); q2 = jointData.Position(2); dq1 = jointData.Velocity(1); dq2 = jointData.Velocity(2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    state_space_matrix(i,:) = [q1 q2 dq1 dq2];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    e = [q1;q2;dq1;dq2] - [x1d;x2d;dx1d;dx2d];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    </span><span style="color: rgb(14, 0, 255);">if </span><span >phi &gt; 0</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >        </span><span style="color: rgb(14, 0, 255);">if </span><span >norm((e')*P*B) &gt; phi</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >            vr = -rho*((e')*P*B)/(norm((e')*P*B));</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >        </span><span style="color: rgb(14, 0, 255);">else</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >            vr = -rho*((e')*P*B)/(phi);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >        </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    </span><span style="color: rgb(14, 0, 255);">else</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >        </span><span style="color: rgb(14, 0, 255);">if </span><span >norm((e')*P*B) ~= 0</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >            vr = -rho*((e')*P*B)/(norm((e')*P*B));</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >        </span><span style="color: rgb(14, 0, 255);">else</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >            vr = [0 0];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >        </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    </span><span style="color: rgb(14, 0, 255);">end</span><span >  </span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    u = double(-K*e + [v1d;v2d] + vr'); </span><span style="color: rgb(0, 128, 19);">% Virtual Input</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    virtual_input(i,1) = u(1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    virtual_input(i,2) = u(2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    a = I1 + I2 + m1*r1^2 + m2*(l1^2 + r2^2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    b = m2*l1*r2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    d = I2 + m2*r2^2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    Mmat= [a+2*b* cos(q2), d+b* cos(q2); d+b* cos(q2), d];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    Cmat= [-b* sin(q2)*dq2, -b* sin(q2)*(dq1+dq2); b* sin(q2)*dq1,0];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    Gmat= [-m1*g*r1* sin(q1)-m2*g*(l1* sin(q1)+r2* sin(q1+q2)); -m2*g*r2* sin(q1+q2)];</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    tau = Mmat*u + Cmat*[dq1;dq2] + Gmat;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    control_input(i,1) = tau(1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    control_input(i,2) = tau(2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    time_points(i) = t;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    tau1.Data = tau(1,1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    tau2.Data = tau(2,1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    send(j1_effort, tau1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    send(j2_effort, tau2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >    i = i + 1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >tau1.Data = 0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >tau2.Data = 0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >send(j1_effort, tau1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >send(j2_effort, tau2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >rosshutdown;</span></span></div></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+% ROS Setup
+%system("roslaunch rrbot_gazebo rrbot_world.launch");
+%pause(20);
+%system("roslaunch rrbot_control rrbot_effort_control.launch")
+%pause(20);
+rosshutdown;
+pause(5);
+rosinit;
+
+syms t0 t1 t
+syms theta1 theta1_dot1 theta1_dot2 
+syms theta2 theta2_dot1 theta2_dot2 
+
+m1 = 1;m2=1;l1=1;l2=1;r1=0.45;r2=0.45;I1=0.084;I2=0.084;g=9.81;i1 = 0.063 ; i2 = 0.063 ; m1_new=0.75 ; m2_new = 0.75 ;
+K = [12 0 7 0;0 12 0 7];
+A =[ 0     0     1     0;
+     0     0     0     1;
+   -12     0    -7     0;
+     0   -12     0    -7]
+B = [0 0;0 0;1 0;0 1];
+rho = 4;
+phi = 0.08;
+Q = eye(4)*10;
+P = lyap(A',Q);
+
+j1_effort = rospublisher("/rrbot/joint1_effort_controller/command");
+j2_effort = rospublisher("/rrbot/joint2_effort_controller/command");
+JointStates = rossubscriber("/rrbot/joint_states");
+
+tau1 = rosmessage(j1_effort);
+tau2 = rosmessage(j2_effort);
+
+tau1.Data = 0;
+tau2.Data = 0;
+
+send(j1_effort, tau1);
+send(j2_effort, tau2);
+
+client = rossvcclient("/gazebo/set_model_configuration");
+req = rosmessage(client);
+req.ModelName = 'rrbot';
+req.UrdfParamName = 'robot_description';
+req.JointNames = {'joint1', 'joint2'};
+req.JointPositions = [deg2rad(200), deg2rad(125)];
+resp = call(client, req, 'Timeout', 3);
+
+tic;
+t = 0;
+i = 1;
+
+while (t < 10)
+    t = toc;
+    x1d = (pi * t^3) / 500 - (3 * pi * t^2) / 100 + pi;
+    dx1d = (3 * pi * t^2) / 500 - (3 * pi * t) / 50;
+    v1d = (3 * pi * t) / 250 - (3 * pi) / 50;
+
+    x2d = (pi * t^3) / 1000 - (3 * pi * t^2) / 200 + pi / 2;
+    dx2d = (3 * pi * t^2) / 1000 - (3 * pi * t) / 100;
+    v2d = (3 * pi * t) / 500 - (3 * pi) / 100;
+
+    % read the joint states
+    jointData = receive(JointStates);
+    q1 = jointData.Position(1); q2 = jointData.Position(2); dq1 = jointData.Velocity(1); dq2 = jointData.Velocity(2);
+    state_space_matrix(i,:) = [q1 q2 dq1 dq2];
+
+    e = [q1;q2;dq1;dq2] - [x1d;x2d;dx1d;dx2d];
+    if phi > 0
+        if norm((e')*P*B) > phi
+            vr = -rho*((e')*P*B)/(norm((e')*P*B));
+        else
+            vr = -rho*((e')*P*B)/(phi);
+        end
+    else
+        if norm((e')*P*B) ~= 0
+            vr = -rho*((e')*P*B)/(norm((e')*P*B));
+        else
+            vr = [0 0];
+        end
+    end  
+
+    u = double(-K*e + [v1d;v2d] + vr'); % Virtual Input
+    virtual_input(i,1) = u(1);
+    virtual_input(i,2) = u(2);
+    a = I1 + I2 + m1*r1^2 + m2*(l1^2 + r2^2);
+    b = m2*l1*r2;
+    d = I2 + m2*r2^2;
+    Mmat= [a+2*b* cos(q2), d+b* cos(q2); d+b* cos(q2), d];
+    Cmat= [-b* sin(q2)*dq2, -b* sin(q2)*(dq1+dq2); b* sin(q2)*dq1,0];
+    Gmat= [-m1*g*r1* sin(q1)-m2*g*(l1* sin(q1)+r2* sin(q1+q2)); -m2*g*r2* sin(q1+q2)];
+    tau = Mmat*u + Cmat*[dq1;dq2] + Gmat;
+    control_input(i,1) = tau(1);
+    control_input(i,2) = tau(2);
+    time_points(i) = t;
+
+    tau1.Data = tau(1,1);
+    tau2.Data = tau(2,1);
+    send(j1_effort, tau1);
+    send(j2_effort, tau2);
+    i = i + 1;
+end
+
+tau1.Data = 0;
+tau2.Data = 0;
+
+send(j1_effort, tau1);
+send(j2_effort, tau2);
+rosshutdown;
+##### SOURCE END #####
+-->
+</div></body></html>
