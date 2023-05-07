@@ -58,6 +58,8 @@ v = M(q)
 v_{1}\\
 v_{2}
 \end{bmatrix}
+
++ C(q,\dot{q})\dot{q} + Tg(q)
 \end{equation}
 $$
 
