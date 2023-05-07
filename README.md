@@ -52,12 +52,14 @@ $$
 Write the virtual input controller in the form:
 
 $$
+\begin{equation}\notag
 v = M(q)
 \begin{bmatrix}
 v_{1}\\
 v_{2}
 \end{bmatrix}
  + C(q,\dot{q})\dot{q} + Tg(q)
+\end{equation}
 $$
 
 
