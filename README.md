@@ -3,14 +3,13 @@
 <!-- TOC -->
 
 - [About](#about)
-- [How to Design State Feedback Linearization Controller](#how-to-design-state-feedback-linearization-controller)
-    - [Calculate the Equation of Motion](#calculate-the-equation-of-motion)
-    - [Design State Feedback Linearization Controller](#design-state-feedback-linearization-controller)
+- [How to Design a Robust Controller](#how-to-design-a-robust-controller)
+    - [Derive Manipulator Form](#derive-manipulator-form)
+    - [Derive the component of virtual input](#derive-the-component-of-virtual-input)
 - [Code](#code)
     - [MATLAB](#matlab)
     - [Gazebo and ROS](#gazebo-and-ros)
 - [Performance Comparision](#performance-comparision)
-- [Observations and Results](#observations-and-results)
 - [Designer Details](#designer-details)
 - [License](#license)
 
@@ -18,93 +17,84 @@
 
 # About
 
-The assignment aims to design State Feedback Linearization Controller for a 2-DoF Revolute Revolute Arm for Trajectory Tracking.
+The assignment aims to design Robust Controller for a 2-DoF Revolute Revolute Arm for Trajectory Tracking.
 
 ![RRBot](./Docs/Images/RRBot.png)
 
 The project uses the Equation of Motion derived in this [project](https://github.com/parth-20-07/2-DoF-Revolute-Revolute-robot-arm-Equation-of-Motion) for the identical RRBot.
 
-The assignment aims to design a polynomial trajectory of 3rd order and design a controller based on state feedback  Linearization control for the RRBot using Virtual Control. The controller is of the form:
+The assignment aims to design a polynomial trajectory of 3rd order and design a controller based on Robust Controller for the RRBot. The manipulator form is used for this approach which is of the form:
 
 $$
-v_{i} = - K(x - x_{d}) + v_{d}
+M(q)\ddot{q} + C(q,\dot{q})\dot{q} + Tg(q)=Bu
 $$
 
-where;
+This form is derived by sorting terms from the standard state-space equation.
 
-- $v_{i}$ is the virtual input for the joint
-- $x_{d}$ is the desired position at any instance of time
-- $v_{d}$ is the desired acceleration at any instance of time which is calculated by taking the double derivative of the position equation
+# How to Design a Robust Controller
 
-# How to Design State Feedback Linearization Controller
+## Derive Manipulator Form
 
-## Calculate the Equation of Motion
-
-Calculate the equation of motion for the system using the guide [here](https://github.com/parth-20-07/2-DoF-Revolute-Revolute-robot-arm-Equation-of-Motion).
-
-## Design State Feedback Linearization Controller
-
-- Design the controller of the form:
+Rearrange the terms of the state space equation from the form
 
 $$
-\begin{equation}\notag
+\dot{z} = f(z,u)
+$$
+
+to
+
+$$
+M(q)\ddot{q} + C(q,\dot{q})\dot{q} + Tg(q)=Bu
+$$
+
+## Derive the component of virtual input
+
+Write the virtual input controller in the form:
+
+$$
+v = M(q)
 \begin{bmatrix}
-u_{1}\\
-u_{2}
-\end{bmatrix}=
-\begin{bmatrix}
-\ddot{\theta_{1}}\\
-\ddot{\theta_{2}}
+v_{1}\\
+v_{2}
 \end{bmatrix}
-\end{equation}
+ + C(q,\dot{q})\dot{q} + Tg(q)
 $$
 
-- Replace $\ddot{\theta_{i}}$ with virtual input $v_{i}$ for trajectory tracking controller design.
 
 # Code
 
 ## MATLAB
-The complete calculation has been done [here (webpage form)](https://htmlpreview.github.io/?https://github.com/parth-20-07/Trajectory-Tracking-using-State-Feedback-Linearization-Control-for-a-2-DoF-RRBot/blob/main/Solution/MATLAB/main.html) in MATLAB. The systems with the equation of motion are simulated as follows
-
-![MATLAB Simulation](./Docs/Images/MATLAB%20Simulation.gif)
+The complete calculation has been done [here (webpage form)](https://htmlpreview.github.io/?https://github.com/parth-20-07/Trajectory-Tracking-using-Robust-Controller-for-a-2-DoF-RRBot/blob/main/Solution/MATLAB/main.html) in MATLAB.
 
 ## Gazebo and ROS
 
-The same system is simulated with the equations of motion present in Gazebo with real-world physics replication as shown [here (webpage form)](https://htmlpreview.github.io/?https://github.com/parth-20-07/Trajectory-Tracking-using-State-Feedback-Linearization-Control-for-a-2-DoF-RRBot/blob/main/Solution/Gazebo/rrbot_traj_control.html).
+The same system is simulated with the equations of motion present in Gazebo with real-world physics replication as shown [here (webpage form)](https://github.com/parth-20-07/Trajectory-Tracking-using-Robust-Controller-for-a-2-DoF-RRBot/blob/main/Solution/GAZEBO/rrbot_traj_control.html).
 
 # Performance Comparision
 
 - **$\theta_{1}$ vs $t$**
 
-  ![performance theta1vt](./Docs/Images/comparision_theta1.jpg)
+  ![performance theta1vt](./Docs/Images/comparision/comparisiontheta1.jpg)
   
 - **$\dot{\theta_{1}}$ vs $t$**
 
-  ![performance dtheta1vt](./Docs/Images/comparision_dtheta1.jpg)
+  ![performance dtheta1vt](./Docs/Images/comparision/comparisiondtheta1.jpg)
   
 - **$\tau_{1}$ vs $t$**
 
-  ![performance tau1vt](./Docs/Images/comparision_tau1.jpg)
+  ![performance tau1vt](./Docs/Images/comparision/comparisioncontrol1.jpg)
 
 - **$\theta_{2}$ vs $t$**
 
-  ![performance theta2vt](./Docs/Images/comparision_theta2.jpg)
+  ![performance theta2vt](./Docs/Images/comparision/comparisiontheta2.jpg)
   
 - **$\dot{\theta_{2}}$ vs $t$**
 
-  ![performance dtheta2vt](./Docs/Images/comparision_dtheta2.jpg)
+  ![performance dtheta2vt](./Docs/Images/comparision/comparisiondtheta3.jpg)
+  
+- **$\tau_{2}$ vs $t$**
 
-
-# Observations and Results
-
-| Graph Type                | MATLAB                                                | Gazebo                                                 |
-| ------------------------- | ----------------------------------------------------- | ------------------------------------------------------ |
-| $\theta_{1}$ vs $t$       | ![matlab_theta1_vs_t](./Solution/MATLAB/theta1.jpg)   | ![gazebo_theta1_vs_t](./Solution/Gazebo/theta1.jpg)    |
-| $\dot{\theta_{1}}$ vs $t$ | ![matlab_dtheta1_vs_t](./Solution/MATLAB/dtheta1.jpg) | ![gazebo_dtheta1_vs_t](./Solution/Gazebo/dtheta1.jpg)  |
-| $\tau_{1}$ vs $t$         | ![matlab_tau1_vs_t](./Solution/MATLAB/tau1.jpg)       | ![gazebo_tau1_vs_t](./Solution/Gazebo/tau1.jpg)        |
-| $\theta_{2}$ vs $t$       | ![matlab_theta2_vs_t](./Solution/MATLAB/theta2.jpg)   | ![gazebo_theta2_vs_t](./Solution/Gazebo/theta2.jpg)    |
-| $\dot{\theta_{2}}$ vs $t$ | ![matlab_dtheta2_vs_t](./Solution/MATLAB/dtheta2.jpg) | ![gazebo_dtheta2_vs_t](./Solution/Gazebo/dtheta2.jpg) |
-| $\tau_{2}$ vs $t$         | ![matlab_tau2_vs_t](./Solution/MATLAB/tau2.jpg)       | ![gazebo_tau2_vs_t](./Solution/Gazebo/tau2.jpg)        |
+  ![performance tau2vt](./Docs/Images/comparision/comparisioncontrol2.jpg)
 
 **Possible Reasons for difference:**
 - The lack of friction in the MATLAB System.
