@@ -71,7 +71,7 @@ The complete calculation has been done [here (webpage form)](https://htmlpreview
 
 ## Gazebo and ROS
 
-The same system is simulated with the equations of motion present in Gazebo with real-world physics replication as shown [here (webpage form)](https://github.com/parth-20-07/Trajectory-Tracking-using-Robust-Controller-for-a-2-DoF-RRBot/blob/main/Solution/GAZEBO/rrbot_traj_control.html).
+The same system is simulated with the equations of motion present in Gazebo with real-world physics replication as shown [here (webpage form)](https://htmlpreview.github.io/?https://github.com/parth-20-07/Trajectory-Tracking-using-Robust-Controller-for-a-2-DoF-RRBot/blob/main/Solution/GAZEBO/rrbot_traj_control.html).
 
 # Performance Comparision
 
