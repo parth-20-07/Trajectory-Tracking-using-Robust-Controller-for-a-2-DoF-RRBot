@@ -2,20 +2,17 @@
 
 <!-- TOC -->
 
-- [About](#about)
 - [How to Design a Robust Controller](#how-to-design-a-robust-controller)
-    - [Derive Manipulator Form](#derive-manipulator-form)
-    - [Derive the component of virtual input](#derive-the-component-of-virtual-input)
+  - [Derive Manipulator Form](#derive-manipulator-form)
+  - [Derive the component of virtual input](#derive-the-component-of-virtual-input)
 - [Code](#code)
-    - [MATLAB](#matlab)
-    - [Gazebo and ROS](#gazebo-and-ros)
+  - [MATLAB](#matlab)
+  - [Gazebo and ROS](#gazebo-and-ros)
 - [Performance Comparision](#performance-comparision)
 - [Designer Details](#designer-details)
 - [License](#license)
 
 <!-- /TOC -->
-
-# About
 
 The assignment aims to design Robust Controller for a 2-DoF Revolute Revolute Arm for Trajectory Tracking.
 
@@ -61,10 +58,10 @@ v_{2}
 \end{equation}
 $$
 
-
 # Code
 
 ## MATLAB
+
 The complete calculation has been done [here (webpage form)](https://htmlpreview.github.io/?https://github.com/parth-20-07/Trajectory-Tracking-using-Robust-Controller-for-a-2-DoF-RRBot/blob/main/Solution/MATLAB/main.html) in MATLAB.
 
 ## Gazebo and ROS
@@ -75,29 +72,30 @@ The same system is simulated with the equations of motion present in Gazebo with
 
 - **$\theta_{1}$ vs $t$**
 
-  ![performance theta1vt](./Docs/Images/comparision/comparisiontheta1.jpg)
-  
+![performance theta1vt](./Docs/Images/comparision/comparisiontheta1.jpg)
+
 - **$\dot{\theta_{1}}$ vs $t$**
 
-  ![performance dtheta1vt](./Docs/Images/comparision/comparisiondtheta1.jpg)
-  
+![performance dtheta1vt](./Docs/Images/comparision/comparisiondtheta1.jpg)
+
 - **$\tau_{1}$ vs $t$**
 
-  ![performance tau1vt](./Docs/Images/comparision/comparisioncontrol1.jpg)
+![performance tau1vt](./Docs/Images/comparision/comparisioncontrol1.jpg)
 
 - **$\theta_{2}$ vs $t$**
 
-  ![performance theta2vt](./Docs/Images/comparision/comparisiontheta2.jpg)
-  
+![performance theta2vt](./Docs/Images/comparision/comparisiontheta2.jpg)
+
 - **$\dot{\theta_{2}}$ vs $t$**
 
-  ![performance dtheta2vt](./Docs/Images/comparision/comparisiondtheta3.jpg)
-  
+![performance dtheta2vt](./Docs/Images/comparision/comparisiondtheta3.jpg)
+
 - **$\tau_{2}$ vs $t$**
 
-  ![performance tau2vt](./Docs/Images/comparision/comparisioncontrol2.jpg)
+![performance tau2vt](./Docs/Images/comparision/comparisioncontrol2.jpg)
 
 **Possible Reasons for difference:**
+
 - The lack of friction in the MATLAB System.
 - The estimated value of gravitational acceleration in MATLAB.
 
